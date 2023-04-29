@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Secure Deliveries</string>
+    <string name="app_logo">Logo de Secure Deliveries</string>
+    <string name="app_background">Fondo de Secure Deliveries</string>
+
+    <string name="huella_instruccion">Ingresa tu huella</string>
+    <string name="huella_img">Huella digital</string>
+    <string name="huella_autenticacion">Autenticación biometrica.</string>
+
+    <string name="usuario_instruccion">Inicio de sesión</string>
+    <string name="usuario_supervisor"><u>Supervisor</u></string>
+    <string name="usuario_repartidor"><u>Repartidor</u></string>
+    <string name="usuario_img_supervisor"><u>Imagen Supervisor</u></string>
+    <string name="usuario_img_repartidor"><u>Imagen Repartidor</u></string>
+    <string name="usuario_inicio_sesion">Iniciar sesión</string>
+    <string name="usuario_usuario">Ingresar usuario...</string>
+    <string name="usuario_password">Ingresar contraseña...</string>
+    <string name="usuario_cerrar">Cerrar sesión.</string>
+
+    <string name="repartidor_foto">Tomar fotografía.</string>
+
+</resources>
