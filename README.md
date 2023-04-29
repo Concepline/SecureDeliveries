@@ -11,10 +11,8 @@
 Secure Deliveries: La solución segura para la entrega de tus paquetes.
     <br/>
     <br/>
-    <a href="https://github.com/ShaanCoding/ReadME-Generator"><strong>Explore the docs »</strong></a>
     <br/>
     <br/>
-    <a href="https://github.com/ShaanCoding/ReadME-Generator">View Demo</a>
     .
   </p>
 </p>
