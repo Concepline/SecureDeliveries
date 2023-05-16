@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.ImageView
 
 class LoginRepartidor : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,9 +13,9 @@ class LoginRepartidor : AppCompatActivity() {
     }
 
     private fun menuRepartidor() {
-        val btnSupervisor = findViewById<Button>(R.id.btn_login_repartidor)
+        val btnRepartidor = findViewById<Button>(R.id.btn_login_repartidor)
 
-        btnSupervisor.setOnClickListener {
+        btnRepartidor.setOnClickListener {
             startActivity(Intent(this@LoginRepartidor,MenuRepartidor::class.java))
             finish()
         }

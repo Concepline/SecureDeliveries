@@ -13,10 +13,20 @@
     <string name="usuario_img_supervisor"><u>Imagen Supervisor</u></string>
     <string name="usuario_img_repartidor"><u>Imagen Repartidor</u></string>
     <string name="usuario_inicio_sesion">Iniciar sesión</string>
-    <string name="usuario_usuario">Ingresar usuario...</string>
-    <string name="usuario_password">Ingresar contraseña...</string>
+    <string name="usuario_usuario">Ingresar usuario&#8230;</string>
+    <string name="usuario_password">Ingresar contraseña&#8230;</string>
     <string name="usuario_cerrar">Cerrar sesión.</string>
 
+    <!-- Menu repartidor -->
     <string name="repartidor_foto">Tomar fotografía.</string>
+    <string name="title_activity_menu_supervisor">MenuSupervisor</string>
+
+    <!-- Menu supervisor -->
+    <string name="crear_repartidor">Crear repartidor.</string>
+    <string name="eliminar_repartidor">Eliminar repartidor</string>
+    <string name="editar_repartidor">Editar repartidor.</string>
+    <string name="buscar_imagen">Buscar ID de imagen.</string>
+    <string name="seleccionar_imagen">Seleccionar imagen a descifrar.</string>
+    <string name="informacion_imagen">Ver información de imagen.</string>
 
 </resources>
