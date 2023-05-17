@@ -35,5 +35,6 @@
     <string name="eliminar">Eliminar</string>
     <string name="guardar">Guardar</string>
     <string name="cancelar">Cancelar</string>
+    <string name="descifrar">Descifrar</string>
 
 </resources>
