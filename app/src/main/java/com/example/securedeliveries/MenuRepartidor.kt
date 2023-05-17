@@ -1,10 +1,9 @@
 package com.example.securedeliveries
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 
 class MenuRepartidor : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,6 +27,7 @@ class MenuRepartidor : AppCompatActivity() {
 
         btnFoto.setOnClickListener {
             startActivity(Intent(this@MenuRepartidor,RepartidorFotografia::class.java))
+            finish()
         }
     }
 }
