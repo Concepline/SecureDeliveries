@@ -10,8 +10,8 @@ class MenuSupervisor : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_supervisor)
         crearrepartidor()
-        ediarrepartidor()
         eliminarrepartidor()
+        elegirimagendescifrar()
         cerrarSesion()
     }
 
@@ -31,19 +31,21 @@ class MenuSupervisor : AppCompatActivity() {
             startActivity(Intent(this@MenuSupervisor,CrearRepartidor::class.java))
         }
     }
-    private fun ediarrepartidor() {
-        val btnEditar = findViewById<ImageView>(R.id.btn_editar_repartidor)
 
-        btnEditar.setOnClickListener {
-            startActivity(Intent(this@MenuSupervisor,EditarRepartidor::class.java))
-        }
-    }
 
     private fun eliminarrepartidor() {
         val btnEliminar = findViewById<ImageView>(R.id.btn_eliminar_repartidor)
 
         btnEliminar.setOnClickListener {
             startActivity(Intent(this@MenuSupervisor,EliminarRepartidor::class.java))
+        }
+    }
+
+    private fun elegirimagendescifrar(){
+        val btnElegirImagen = findViewById<ImageView>(R.id.btn_descifrar_imagen)
+
+        btnElegirImagen.setOnClickListener {
+            startActivity(Intent(this@MenuSupervisor,SeleccionDescifrar::class.java))
         }
     }
 }
