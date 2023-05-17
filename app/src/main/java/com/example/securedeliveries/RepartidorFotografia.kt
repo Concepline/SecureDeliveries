@@ -19,13 +19,34 @@ class RepartidorFotografia : AppCompatActivity() {
     var foto: Uri? = null
     private lateinit var fotografia: ImageView
     private lateinit var cancelar: ImageView
+    private lateinit var aceptar: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_repartidor_fotografia)
         abreCamara_Click()
         otrafoto()
+        resizeImage()
         cancelar()
+    }
+
+    fun resizeImage() {
+        aceptar = findViewById(R.id.btn_aceptar)
+        aceptar.setOnClickListener {
+            fotografia = findViewById(R.id.img_foto)
+            val newWidth = 1000 // Nueva anchura en píxeles
+            val newHeight = 1000 // Nueva altura en píxeles
+            val layoutParams = fotografia.layoutParams
+            layoutParams.width = newWidth
+            layoutParams.height = newHeight
+            fotografia.layoutParams = layoutParams
+            val width = fotografia.width // Obtener el ancho del ImageView en píxeles
+            val height = fotografia.height // Obtener el alto del ImageView en píxeles
+
+// Puedes imprimir o utilizar los valores obtenidos según tus necesidades
+            println("Ancho del ImageView: $width")
+            println("Alto del ImageView: $height")
+        }
     }
 
     private fun cancelar() {
