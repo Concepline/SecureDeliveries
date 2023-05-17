@@ -226,11 +226,7 @@ class RepartidorFotografia : AppCompatActivity() {
     }
 
     private fun abreCamara(){
-        val value = ContentValues()
-        value.put(MediaStore.Images.Media.TITLE,"Nueva imagen")
-        foto = contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,value)
         val camaraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        camaraIntent.putExtra(MediaStore.EXTRA_OUTPUT,foto)
         startActivityForResult(camaraIntent,REQUEST_CAMERA)
     }
 
@@ -238,7 +234,7 @@ class RepartidorFotografia : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CAMERA){
             val img_foto : ImageView = findViewById(R.id.img_foto)
-            img_foto.setImageURI(foto)
+            img_foto.setImageBitmap(data?.extras?.get("data") as Bitmap)
         }
     }
 }
