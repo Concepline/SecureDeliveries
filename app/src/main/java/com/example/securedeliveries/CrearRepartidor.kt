@@ -1,5 +1,6 @@
 package com.example.securedeliveries
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
@@ -14,8 +15,10 @@ class CrearRepartidor : AppCompatActivity() {
     private lateinit var usuario: EditText
     private lateinit var password: EditText
     private lateinit var guardarbtn: ImageView
+    private lateinit var cancelarbtn: ImageView
     private lateinit var db: DBHelper
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_crear_repartidor)
@@ -26,6 +29,7 @@ class CrearRepartidor : AppCompatActivity() {
         password = findViewById(R.id.passwordtext)
 
         guardarbtn = findViewById(R.id.btn_guardar)
+        cancelarbtn = findViewById(R.id.btn_cancelar_crear)
 
         db = DBHelper(this)
 
@@ -50,6 +54,14 @@ class CrearRepartidor : AppCompatActivity() {
                 }
             }
         }
+
+
+        cancelarbtn.setOnClickListener {
+            val intent = Intent(applicationContext,MenuSupervisor::class.java)
+            startActivity(intent)
+            finish()
+        }
+
     }
 
 }

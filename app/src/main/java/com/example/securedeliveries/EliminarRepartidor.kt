@@ -1,5 +1,6 @@
 package com.example.securedeliveries
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -33,6 +34,7 @@ class EliminarRepartidor : AppCompatActivity() {
             else{
                 if (deleteuser){
                     Toast.makeText(this, "Usuario eliminado correctamente.", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this@EliminarRepartidor,MenuSupervisor::class.java))
                     finish()
                 }
                 else {

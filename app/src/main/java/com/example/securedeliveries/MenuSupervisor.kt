@@ -29,6 +29,7 @@ class MenuSupervisor : AppCompatActivity() {
 
         btnCrear.setOnClickListener {
             startActivity(Intent(this@MenuSupervisor,CrearRepartidor::class.java))
+            finish()
         }
     }
 
@@ -38,6 +39,7 @@ class MenuSupervisor : AppCompatActivity() {
 
         btnEliminar.setOnClickListener {
             startActivity(Intent(this@MenuSupervisor,EliminarRepartidor::class.java))
+            finish()
         }
     }
 
@@ -46,6 +48,7 @@ class MenuSupervisor : AppCompatActivity() {
 
         btnElegirImagen.setOnClickListener {
             startActivity(Intent(this@MenuSupervisor,SeleccionDescifrar::class.java))
+            finish()
         }
     }
 }
