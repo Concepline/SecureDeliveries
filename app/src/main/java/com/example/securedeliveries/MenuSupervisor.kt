@@ -9,8 +9,8 @@ class MenuSupervisor : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_supervisor)
-        cerrarSesion()
         crearrepartidor()
+        cerrarSesion()
     }
 
     private fun cerrarSesion() {

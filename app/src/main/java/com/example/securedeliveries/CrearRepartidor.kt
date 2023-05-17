@@ -1,19 +1,19 @@
 package com.example.securedeliveries
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
-import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
 class CrearRepartidor : AppCompatActivity() {
 
     private lateinit var nombre: EditText
     private lateinit var usuario: EditText
     private lateinit var password: EditText
-    private lateinit var guardarbtn: Button
+    private lateinit var guardarbtn: ImageView
     private lateinit var db: DBHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,10 +39,11 @@ class CrearRepartidor : AppCompatActivity() {
                     Toast.makeText(this, "Complete todos los campos.", Toast.LENGTH_SHORT).show()
             }
             else{
-                if (savedata==true){
+                if (savedata){
                     Toast.makeText(this,"Registro exitoso.",Toast.LENGTH_SHORT).show()
                     val intent = Intent(applicationContext,MenuSupervisor::class.java)
                     startActivity(intent)
+                    finish()
                 }
                 else{
                     Toast.makeText(this,"Ya existe este usuario.",Toast.LENGTH_SHORT).show()
