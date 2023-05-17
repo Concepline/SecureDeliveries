@@ -8,31 +8,48 @@
     tools:context=".EliminarRepartidor">
 
     <TextView
+        android:id="@+id/textView36"
+        android:layout_width="129dp"
+        android:layout_height="49dp"
+        android:text="@string/cancelar"
+        android:textAlignment="center"
+        android:textColor="#F8F6F6"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.886"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.818" />
+
+    <ImageView
+        android:id="@+id/btn_eliminar_usuario"
+        android:layout_width="126dp"
+        android:layout_height="120dp"
+        android:clickable="true"
+        android:contentDescription="@string/usuario_img_repartidor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.72"
+        app:srcCompat="@drawable/eliminar" />
+
+    <TextView
         android:id="@+id/textView24"
-        android:layout_width="189dp"
-        android:layout_height="62dp"
+        android:layout_width="129dp"
+        android:layout_height="49dp"
         android:text="@string/eliminar"
         android:textAlignment="center"
         android:textColor="#F8F6F6"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.111"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.811" />
-
-    <ImageView
-        android:id="@+id/btn_eliminar_usuario"
-        android:layout_width="127dp"
-        android:layout_height="114dp"
-        android:clickable="true"
-        android:contentDescription="@string/usuario_img_repartidor"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.698"
-        app:srcCompat="@drawable/eliminar" />
+        app:layout_constraintVertical_bias="0.818" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="345dp"
@@ -104,4 +121,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="TextSizeCheck" />
+
+    <ImageView
+        android:id="@+id/btn_eliminar_cancelar"
+        android:layout_width="197dp"
+        android:layout_height="149dp"
+        android:clickable="true"
+        android:contentDescription="@string/usuario_img_repartidor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.995"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.727"
+        app:srcCompat="@drawable/baseline_cancel_24" />
 </androidx.constraintlayout.widget.ConstraintLayout>

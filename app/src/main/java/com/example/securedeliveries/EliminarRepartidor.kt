@@ -12,6 +12,7 @@ class EliminarRepartidor : AppCompatActivity() {
 
     private lateinit var usuario: EditText
     private lateinit var eliminarbtn: ImageView
+    private lateinit var cancelarbtn: ImageView
     private lateinit var db: DBHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +22,7 @@ class EliminarRepartidor : AppCompatActivity() {
         usuario = findViewById(R.id.usuario_eliminar)
 
         eliminarbtn = findViewById(R.id.btn_eliminar_usuario)
+        cancelarbtn = findViewById(R.id.btn_eliminar_cancelar)
 
         db = DBHelper(this)
 
@@ -42,5 +44,18 @@ class EliminarRepartidor : AppCompatActivity() {
                 }
             }
         }
+
+
+        cancelarbtn.setOnClickListener {
+            val intent = Intent(applicationContext,MenuSupervisor::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+
+
+
     }
+
+
 }
