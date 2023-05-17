@@ -1,21 +1,22 @@
 package com.example.securedeliveries
 
+import android.Manifest
+import android.app.Activity
 import android.content.ContentValues
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Environment
 import android.provider.MediaStore
-import android.widget.ImageView
-import android.Manifest
-import android.app.Activity
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.graphics.drawable.BitmapDrawable
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import java.io.IOException
 import java.lang.Math.PI
 import java.lang.Math.sin
 import kotlin.random.Random
@@ -120,6 +121,31 @@ class RepartidorFotografia : AppCompatActivity() {
         val encryptedBitmap = Bitmap.createBitmap(bitmap.width, bitmap.height, Bitmap.Config.ARGB_8888)
         encryptedBitmap.setPixels(sortedPixels, 0, bitmap.width, 0, 0, bitmap.width, bitmap.height)
         fotografia.setImageBitmap(encryptedBitmap)
+
+        val filename = "imagen_guardada.jpg"
+        val contentValues = ContentValues().apply {
+            put(MediaStore.Images.Media.DISPLAY_NAME, filename)
+            put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg")
+            put(MediaStore.Images.Media.RELATIVE_PATH, Environment.DIRECTORY_PICTURES)
+        }
+
+        val resolver = contentResolver
+        val imageUri = resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)
+
+        val drawablec = fotografia.drawable as BitmapDrawable
+        val bitmapc =drawablec.bitmap
+
+        try {
+            imageUri?.let { uri ->
+                resolver.openOutputStream(uri)?.use { outputStream ->
+                    bitmapc.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
+                    Toast.makeText(this, "Imagen guardada correctamente", Toast.LENGTH_SHORT).show()
+                }
+            }
+        } catch (e: IOException) {
+            e.printStackTrace()
+            Toast.makeText(this, "Error al guardar la imagen", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun getPixels(bitmap: Bitmap): IntArray {
