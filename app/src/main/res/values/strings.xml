@@ -32,5 +32,6 @@
 
 
     <string name="guardar_repartidor">Guardar</string>
+    <string name="eliminar">Eliminar</string>
 
 </resources>
