@@ -33,6 +33,7 @@ class EliminarRepartidor : AppCompatActivity() {
             else{
                 if (deleteuser){
                     Toast.makeText(this, "Usuario eliminado correctamente.", Toast.LENGTH_SHORT).show()
+                    finish()
                 }
                 else {
                     Toast.makeText(this,"No se encontro el usuario.",Toast.LENGTH_SHORT).show()
