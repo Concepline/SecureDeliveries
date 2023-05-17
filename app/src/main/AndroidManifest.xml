@@ -15,6 +15,9 @@
         android:theme="@style/Theme.SecureDeliveries"
         tools:targetApi="31">
         <activity
+            android:name=".CrearRepartidor"
+            android:exported="false" />
+        <activity
             android:name=".MenuSupervisor"
             android:exported="false"
             android:label="@string/title_activity_menu_supervisor"
