@@ -35,23 +35,9 @@
         app:srcCompat="@drawable/cerrarsesion" />
 
     <TextView
-        android:id="@+id/textView26"
-        android:layout_width="103dp"
-        android:layout_height="37dp"
-        android:text="@string/informacion_imagen"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.951"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.818" />
-
-    <TextView
         android:id="@+id/textView25"
-        android:layout_width="105dp"
-        android:layout_height="36dp"
+        android:layout_width="125dp"
+        android:layout_height="39dp"
         android:text="@string/seleccionar_imagen"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
@@ -61,20 +47,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.819" />
-
-    <TextView
-        android:id="@+id/textView24"
-        android:layout_width="102dp"
-        android:layout_height="37dp"
-        android:text="@string/buscar_imagen"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.051"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.82" />
 
     <TextView
         android:id="@+id/textView23"
@@ -105,7 +77,7 @@
         app:layout_constraintVertical_bias="0.595" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/btn_eliminar_repartidor"
         android:layout_width="102dp"
         android:layout_height="95dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -116,20 +88,7 @@
         android:importantForAccessibility="no" />
 
     <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="102dp"
-        android:layout_height="95dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.948"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.743"
-        app:srcCompat="@drawable/informacion_imagen"
-        android:importantForAccessibility="no" />
-
-    <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/btn_descifrar_imagen"
         android:layout_width="102dp"
         android:layout_height="95dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -139,19 +98,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.743"
         app:srcCompat="@drawable/selecionar_imagen"
-        android:importantForAccessibility="no" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="102dp"
-        android:layout_height="95dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.051"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.743"
-        app:srcCompat="@drawable/buscar_imagen"
         android:importantForAccessibility="no" />
 
     <TextView
@@ -201,7 +147,7 @@
         app:layout_constraintVertical_bias="0.394" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/btn_editar_repartidor"
         android:layout_width="102dp"
         android:layout_height="95dp"
         app:layout_constraintBottom_toBottomOf="parent"
