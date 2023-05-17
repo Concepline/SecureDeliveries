@@ -23,7 +23,7 @@
         app:layout_constraintVertical_bias="0.958" />
 
     <ImageView
-        android:id="@+id/btn_repartidor5"
+        android:id="@+id/btn_guardar"
         android:layout_width="127dp"
         android:layout_height="114dp"
         android:clickable="true"
@@ -48,6 +48,7 @@
 
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordtext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#1E5B94"
@@ -74,6 +75,7 @@
 
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/usuariotext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#1E5B94"
@@ -100,6 +102,7 @@
 
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nombretext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#1E5B94"
