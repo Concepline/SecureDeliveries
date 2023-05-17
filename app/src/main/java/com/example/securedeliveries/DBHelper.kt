@@ -2,6 +2,7 @@ package com.example.securedeliveries
 
 import android.content.ContentValues
 import android.content.Context
+import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
@@ -41,17 +42,17 @@ class DBHelper(context: Context):SQLiteOpenHelper(context,"Userdata",null,1) {
         }
     }
 
-    fun editUserData(username: String, newName: String, newPassword: String): Boolean {
-        val db = this.writableDatabase
-        val contentValues = ContentValues()
-        contentValues.put("name", newName)
-        contentValues.put("password", newPassword)
-
-        val selection = "username = ?"
-        val selectionArgs = arrayOf(username)
-
-        val rowsAffected = db.update("Userdata", contentValues, selection, selectionArgs)
-        return rowsAffected > 0
+    fun deleteUser(username: String): Boolean {
+        val p0 = this.writableDatabase
+        val cursor: Cursor = p0.rawQuery("select * from Userdata where username = ?", arrayOf(username))
+        if (cursor.count>0){
+            val result = p0.delete("Userdata","username=?", arrayOf(username))
+            return result != -1
+        }
+        else {
+            return false
+        }
     }
+
 
 }
