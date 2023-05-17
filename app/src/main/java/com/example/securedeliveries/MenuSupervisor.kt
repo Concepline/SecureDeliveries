@@ -10,6 +10,7 @@ class MenuSupervisor : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_supervisor)
         cerrarSesion()
+        crearrepartidor()
     }
 
     private fun cerrarSesion() {
@@ -18,6 +19,14 @@ class MenuSupervisor : AppCompatActivity() {
         btnCerrar.setOnClickListener {
             startActivity(Intent(this@MenuSupervisor,LoginSupervisor::class.java))
             finish()
+        }
+    }
+
+    private fun crearrepartidor() {
+        val btnCrear = findViewById<ImageView>(R.id.btn_crear_repartidor)
+
+        btnCrear.setOnClickListener {
+            startActivity(Intent(this@MenuSupervisor,CrearRepartidor::class.java))
         }
     }
 }

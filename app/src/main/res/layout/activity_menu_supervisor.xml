@@ -213,7 +213,7 @@
         android:importantForAccessibility="no" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/btn_crear_repartidor"
         android:layout_width="102dp"
         android:layout_height="95dp"
         app:layout_constraintBottom_toBottomOf="parent"
