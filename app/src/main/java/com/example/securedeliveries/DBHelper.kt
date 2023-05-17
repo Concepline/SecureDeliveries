@@ -7,17 +7,18 @@ import android.database.sqlite.SQLiteOpenHelper
 
 class DBHelper(context: Context):SQLiteOpenHelper(context,"Userdata",null,1) {
     override fun onCreate(p0: SQLiteDatabase?) {
-        p0?.execSQL("create table Userdata (username TEXT primary key, password TEXT)")
+        p0?.execSQL("create table Userdata (username TEXT primary key,name TEXT, password TEXT)")
     }
 
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
         p0?.execSQL("drop table if exists Userdata")
     }
 
-    fun inserdata (username: String, password: String): Boolean {
+    fun inserdata (username: String,name: String, password: String): Boolean {
         val p0 = this.writableDatabase
         val cv = ContentValues()
         cv.put("username",username)
+        cv.put("name",name)
         cv.put("password",password)
         val result = p0.insert("Userdata",null,cv)
         if (result==-1 .toLong()){
@@ -34,9 +35,10 @@ class DBHelper(context: Context):SQLiteOpenHelper(context,"Userdata",null,1) {
             cursor.close()
             return false
         }
-        cursor.close()
-        return true
-
+        else {
+            cursor.close()
+            return true
+        }
     }
 
 }

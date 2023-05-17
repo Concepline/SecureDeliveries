@@ -33,7 +33,7 @@ class CrearRepartidor : AppCompatActivity() {
             val nombretext =  nombre.text.toString()
             val usuariotext = usuario.text.toString()
             val paswordtext = password.text.toString()
-            val savedata = db.inserdata(usuariotext,paswordtext)
+            val savedata = db.inserdata(usuariotext,nombretext,paswordtext)
 
             if (TextUtils.isEmpty(usuariotext) || TextUtils.isEmpty(paswordtext)){
                     Toast.makeText(this, "Complete todos los campos.", Toast.LENGTH_SHORT).show()

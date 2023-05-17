@@ -76,6 +76,7 @@
 
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/usuario_supervisor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#1E5B94"
@@ -105,6 +106,7 @@
 
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password_supervisor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#1E5B94"
