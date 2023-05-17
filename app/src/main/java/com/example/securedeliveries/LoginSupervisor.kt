@@ -37,6 +37,7 @@ class LoginSupervisor : AppCompatActivity() {
                 if (usuariotexto=="admin" && passwordtext=="12345") {
                     Toast.makeText(this,"Acceso concedido.",Toast.LENGTH_SHORT).show()
                     startActivity(Intent(this@LoginSupervisor,MenuSupervisor::class.java))
+                    finish()
                 } else {
                     Toast.makeText(this, "Error en el usuario y/o contraseña.", Toast.LENGTH_SHORT).show()
                 }

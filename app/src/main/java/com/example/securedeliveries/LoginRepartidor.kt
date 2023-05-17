@@ -39,6 +39,7 @@ class LoginRepartidor : AppCompatActivity() {
                 if(checckuser){
                     Toast.makeText(this,"Acceso concedido.",Toast.LENGTH_SHORT).show()
                     startActivity(Intent(this@LoginRepartidor,MenuRepartidor::class.java))
+                    finish()
                 }
                 else
                 {
