@@ -15,6 +15,9 @@
         android:theme="@style/Theme.SecureDeliveries"
         tools:targetApi="31">
         <activity
+            android:name=".EliminarRepartidor"
+            android:exported="false" />
+        <activity
             android:name=".EditarRepartidor"
             android:exported="false" />
         <activity
