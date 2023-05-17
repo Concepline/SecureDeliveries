@@ -3,16 +3,17 @@ package com.example.securedeliveries
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.EditText
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 import kotlin.random.Random
 
 class SeleccionDescifrar : AppCompatActivity() {
 
     private lateinit var galeria: ImageView
     private lateinit var btn: ImageView
+    private lateinit var cancelarbtn: ImageView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +28,7 @@ class SeleccionDescifrar : AppCompatActivity() {
         }
 
         descifrar()
+        cancelar()
     }
 
 
@@ -87,5 +89,15 @@ class SeleccionDescifrar : AppCompatActivity() {
             galeria.setImageURI(data?.data)
         }
         super.onActivityResult(requestCode, resultCode, data)
+    }
+
+
+    private fun cancelar(){
+        cancelarbtn = findViewById(R.id.btn_cancelar_descifrar)
+        cancelarbtn.setOnClickListener {
+            val intent = Intent(applicationContext, MenuSupervisor::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 }

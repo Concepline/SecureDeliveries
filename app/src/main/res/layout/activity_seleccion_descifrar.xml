@@ -7,30 +7,89 @@
     android:background="@drawable/fondo"
     tools:context=".SeleccionDescifrar">
 
-    <ImageView
-        android:id="@+id/btn_descifra"
-        android:layout_width="118dp"
-        android:layout_height="112dp"
+    <TextView
+        android:id="@+id/textView40"
+        android:layout_width="397dp"
+        android:layout_height="53dp"
+        android:text="@string/seleccionar_imagen"
+        android:textAlignment="center"
+        android:textColor="#F8F6F6"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.222"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.883"
-        app:srcCompat="@drawable/baseline_check_circle_24"
-        android:importantForAccessibility="no" />
+        app:layout_constraintVertical_bias="0.721" />
+
+    <ImageView
+        android:id="@+id/btn_descifra"
+        android:layout_width="138dp"
+        android:layout_height="140dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.901"
+        app:srcCompat="@drawable/baseline_check_circle_24" />
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="136dp"
+        android:layout_height="48dp"
+        android:text="@string/guardar_repartidor"
+        android:textAlignment="center"
+        android:textColor="#F8F6F6"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.967" />
+
+    <TextView
+        android:id="@+id/textView39"
+        android:layout_width="136dp"
+        android:layout_height="48dp"
+        android:text="@string/cancelar"
+        android:textAlignment="center"
+        android:textColor="#F8F6F6"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.941"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.967" />
+
+    <ImageView
+        android:id="@+id/btn_cancelar_descifrar"
+        android:layout_width="138dp"
+        android:layout_height="140dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.941"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.901"
+        app:srcCompat="@drawable/baseline_cancel_24" />
 
     <ImageView
         android:id="@+id/galeria_supervisor"
         android:layout_width="409dp"
         android:layout_height="386dp"
+        android:importantForAccessibility="no"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.471"
-        app:srcCompat="@drawable/baseline_image_24"
-        android:importantForAccessibility="no" />
+        app:layout_constraintVertical_bias="0.407"
+        app:srcCompat="@drawable/baseline_image_24" />
 
     <TextView
         android:id="@+id/textView26"
