@@ -7,19 +7,6 @@
     android:background="@drawable/fondo"
     tools:context=".SeleccionDescifrar">
 
-    <ImageView
-        android:id="@+id/galeria_supervisor2"
-        android:layout_width="409dp"
-        android:layout_height="386dp"
-        android:importantForAccessibility="no"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.407"
-        app:srcCompat="@drawable/baseline_image_24" />
-
     <TextView
         android:id="@+id/txt_instruccion_descifrado"
         android:layout_width="397dp"
@@ -32,7 +19,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.733" />
+        app:layout_constraintVertical_bias="0.754" />
 
     <ImageView
         android:id="@+id/btn_descifra"
@@ -100,7 +87,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.407"
+        app:layout_constraintVertical_bias="0.394"
         app:srcCompat="@drawable/baseline_image_24" />
 
     <TextView

@@ -19,6 +19,9 @@ import androidx.appcompat.app.AppCompatActivity
 import java.io.IOException
 import java.lang.Math.PI
 import java.lang.Math.sin
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 import kotlin.random.Random
 
 class RepartidorFotografia : AppCompatActivity() {
@@ -51,8 +54,9 @@ class RepartidorFotografia : AppCompatActivity() {
         aceptar = findViewById(R.id.btn_aceptar)
         aceptar.setOnClickListener {
             fotografia = findViewById(R.id.img_foto)
-            val newWidth = 1000 // Nueva anchura en píxeles
-            val newHeight = 1000 // Nueva altura en píxeles
+            val newWidth = 1351 // Nueva anchura en píxeles
+            val newHeight = 1432 // Nueva altura en píxeles
+
             val layoutParams = fotografia.layoutParams
             layoutParams.width = newWidth
             layoutParams.height = newHeight
@@ -115,17 +119,18 @@ class RepartidorFotografia : AppCompatActivity() {
 
         val drawable = fotografia.drawable as BitmapDrawable
         val bitmap =drawable.bitmap
-
         val pixels = getPixels(bitmap)
         val sortedPixels = encryptImage(pixels,key1, r, k)
         val encryptedBitmap = Bitmap.createBitmap(bitmap.width, bitmap.height, Bitmap.Config.ARGB_8888)
         encryptedBitmap.setPixels(sortedPixels, 0, bitmap.width, 0, 0, bitmap.width, bitmap.height)
         fotografia.setImageBitmap(encryptedBitmap)
 
-        val filename = "imagen_guardada.jpg"
+        val filename = "imagen-cifrada.png"
+        val currentDate = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(Date())
+        val filenameWithDate = "${currentDate}_$filename"
         val contentValues = ContentValues().apply {
-            put(MediaStore.Images.Media.DISPLAY_NAME, filename)
-            put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg")
+            put(MediaStore.Images.Media.DISPLAY_NAME, filenameWithDate)
+            put(MediaStore.Images.Media.MIME_TYPE, "image/png")
             put(MediaStore.Images.Media.RELATIVE_PATH, Environment.DIRECTORY_PICTURES)
         }
 
@@ -138,7 +143,7 @@ class RepartidorFotografia : AppCompatActivity() {
         try {
             imageUri?.let { uri ->
                 resolver.openOutputStream(uri)?.use { outputStream ->
-                    bitmapc.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
+                    bitmapc.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
                     Toast.makeText(this, "Imagen guardada correctamente", Toast.LENGTH_SHORT).show()
                 }
             }
@@ -235,6 +240,13 @@ class RepartidorFotografia : AppCompatActivity() {
         if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CAMERA){
             val img_foto : ImageView = findViewById(R.id.img_foto)
             img_foto.setImageBitmap(data?.extras?.get("data") as Bitmap)
+            val originalBitmap = data?.extras?.get("data") as Bitmap
+
+            val newWidth = 480 // Nueva anchura en píxeles
+            val newHeight = 640 // Nueva altura en píxeles
+            val scaledBitmap = Bitmap.createScaledBitmap(originalBitmap, newWidth, newHeight, false)
+
+            img_foto.setImageBitmap(scaledBitmap)
         }
     }
 }
