@@ -35,7 +35,7 @@
         app:srcCompat="@drawable/descifrar" />
 
     <TextView
-        android:id="@+id/textView38"
+        android:id="@+id/text_btn"
         android:layout_width="136dp"
         android:layout_height="48dp"
         android:text="@string/descifrar"
