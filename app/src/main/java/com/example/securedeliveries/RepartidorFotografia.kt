@@ -12,13 +12,12 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
-import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import java.io.IOException
 import java.lang.Math.PI
-import java.lang.Math.sin
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -31,7 +30,7 @@ class RepartidorFotografia : AppCompatActivity() {
     private lateinit var fotografia: ImageView
     private lateinit var cancelar: ImageView
     private lateinit var aceptar: ImageView
-    private lateinit var des: Button
+    private lateinit var txtcifrar: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,77 +38,36 @@ class RepartidorFotografia : AppCompatActivity() {
         abreCamara_Click()
         otrafoto()
         resizeImage()
-        des()
         cancelar()
     }
 
-    fun des()
-    {
-        des = findViewById(R.id.btn_des)
-        des.setOnClickListener {
-            descifrar()
-        }
-    }
+
     fun resizeImage() {
         aceptar = findViewById(R.id.btn_aceptar)
-        aceptar.setOnClickListener {
-            fotografia = findViewById(R.id.img_foto)
-            val newWidth = 1351 // Nueva anchura en píxeles
-            val newHeight = 1432 // Nueva altura en píxeles
-
-            val layoutParams = fotografia.layoutParams
-            layoutParams.width = newWidth
-            layoutParams.height = newHeight
-            fotografia.layoutParams = layoutParams
-            val width = fotografia.width // Obtener el ancho del ImageView en píxeles
-            val height = fotografia.height // Obtener el alto del ImageView en píxeles
-
-// Puedes imprimir o utilizar los valores obtenidos según tus necesidades
-            println("Ancho del ImageView: $width")
-            println("Alto del ImageView: $height")
-            cifrar()
-        }
-    }
-
-    private fun descifrar(){
         fotografia = findViewById(R.id.img_foto)
+        txtcifrar = findViewById(R.id.text_cifrar)
 
-        val key1:Long = 10
-        val r = 0.99 // Parámetro de control r E (0,1]
-        val k = 10 // Número de iteraciones del mapa caótico (Mínimo 10 iteraciones más aleatorio)
+        aceptar.setOnClickListener {
+                aceptar.isEnabled = false
+                val newWidth = 1351 // Nueva anchura en píxeles
+                val newHeight = 1432 // Nueva altura en píxeles
 
-        val drawable = fotografia.drawable as BitmapDrawable
-        val bitmap =drawable.bitmap
+                val layoutParams = fotografia.layoutParams
+                layoutParams.width = newWidth
+                layoutParams.height = newHeight
+                fotografia.layoutParams = layoutParams
+                val width = fotografia.width // Obtener el ancho del ImageView en píxeles
+                val height = fotografia.height // Obtener el alto del ImageView en píxeles
 
-        val pixels = getPixels(bitmap)
-        val sortedPixels = decryptImage(pixels,key1,r, k)
-        val decryptedBitmap = Bitmap.createBitmap(bitmap.width, bitmap.height, Bitmap.Config.ARGB_8888)
-        decryptedBitmap.setPixels(sortedPixels, 0, bitmap.width, 0, 0, bitmap.width, bitmap.height)
-        fotografia.setImageBitmap(decryptedBitmap)
-        println("terminno descifrado")
-    }
+                // Puedes imprimir o utilizar los valores obtenidos según tus necesidades
+                println("Ancho del ImageView: $width")
+                println("Alto del ImageView: $height")
+                cifrar()
 
-
-    private fun decryptImage(sortedPixels: IntArray, seed: Long, r: Double, k: Int): IntArray {
-        val nPixels = sortedPixels.size
-
-        val random = Random(seed)
-        val Xo = DoubleArray(nPixels) { random.nextDouble() }
-        val Xn = DoubleArray(nPixels)
-        val decryptedPixels = IntArray(nPixels)
-
-        for (i in 0 until k) {
-            for (j in 0 until nPixels) {
-                Xn[j] = r * sin(PI * Xo[j])
-            }
-            Xo.indices.sortedBy { Xn[it] }.forEachIndexed { index, sortedIndex ->
-                decryptedPixels[sortedIndex] = sortedPixels[index]
-            }
-            Xn.copyInto(Xo)
         }
-
-        return decryptedPixels
     }
+
+
     private fun cifrar(){
         fotografia = findViewById(R.id.img_foto)
 
@@ -192,9 +150,13 @@ class RepartidorFotografia : AppCompatActivity() {
 
     private fun otrafoto() {
         fotografia = findViewById(R.id.img_foto)
+        aceptar = findViewById(R.id.btn_aceptar)
+
         fotografia.setOnClickListener {
             abreCamara_Click()
-        }
+            aceptar.isEnabled = true
+            }
+
     }
 
     private fun abreCamara_Click(){

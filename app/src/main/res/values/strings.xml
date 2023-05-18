@@ -36,5 +36,5 @@
     <string name="guardar">Guardar</string>
     <string name="cancelar">Cancelar</string>
     <string name="descifrar">Descifrar</string>
-
+    <string name="cifrar">Cifrar</string>
 </resources>

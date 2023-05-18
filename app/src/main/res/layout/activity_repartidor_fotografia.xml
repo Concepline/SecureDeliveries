@@ -8,10 +8,10 @@
     tools:context=".RepartidorFotografia">
 
     <TextView
-        android:id="@+id/textView23"
+        android:id="@+id/text_cifrar"
         android:layout_width="118dp"
         android:layout_height="49dp"
-        android:text="@string/guardar"
+        android:text="@string/cifrar"
         android:textAlignment="center"
         android:textColor="#F8F6F6"
         android:textSize="16sp"
@@ -107,12 +107,4 @@
         app:srcCompat="@drawable/baseline_check_circle_24"
         android:importantForAccessibility="no" />
 
-    <Button
-        android:id="@+id/btn_des"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="160dp"
-        tools:layout_editor_absoluteY="695dp"
-        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
